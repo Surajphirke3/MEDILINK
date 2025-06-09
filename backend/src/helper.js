@@ -8,13 +8,13 @@ function sendMail(recieverEmailId, subject, body) {
         service: "gmail",
         auth: {
           user: process.env.MAILER_USER,
-          pass: process.env.MAILER_PASSWORD
+          pass: process.env.MAILER_PASS
         },
       });
 
 
       return transporter.sendMail({
-        from: "10xtarun@gmail.com",
+        from: "surajphirke3@gmail.com",
         to: recieverEmailId, 
         subject: subject,
         text: body

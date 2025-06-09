@@ -1,5 +1,6 @@
 const mongoose = require("mongoose")
 const user = require("./user")
+const User = mongoose.model("User", user.schema)
 
 const schema = new mongoose.Schema({
     doctorId: {
@@ -14,6 +15,7 @@ const schema = new mongoose.Schema({
     },
     dateTime: {
         type: Number,
+        unixtimestamp: true,
         required: true
     },
     status: {

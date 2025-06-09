@@ -45,7 +45,7 @@ const userSchema = new mongoose.Schema({
     profile: {
         type: profileSchema
     }
-})
+}, { timestamps: true }) 
 
 userSchema.index({ email: 1, role: 1 })
 
