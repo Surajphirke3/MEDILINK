@@ -47,7 +47,7 @@ export function SignUp() {
 
     if (response.status === 201) {
       alert("Signup successful: " + data.data.name);
-      router.push("/");
+      router.push("/login");
     }
   };
 
