@@ -1,5 +1,5 @@
 // tailwind.config.js
-const {heroui} = require("@heroui/theme");
+
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -7,8 +7,12 @@ module.exports = {
     "./node_modules/@heroui/theme/dist/components/form.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+       fontFamily: {
+        anaheim: ['Anaheim','Caprasimo', 'sans-serif'],
+      },
+    },
   },
   darkMode: "class",
-  plugins: [heroui()],
+  plugins: [],
 };

@@ -13,12 +13,12 @@ import {
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen w-full">
+    <main className="min-h-screen w-full ">
       {/* Hero */}
       <section className="bg-white dark:bg-black py-20 px-4 md:px-20">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl font-caprasimo   mb-6">
               MediLink: Your Gateway to Smarter Healthcare Management
             </h1>
             <p className="text-lg text-muted-foreground mb-8">

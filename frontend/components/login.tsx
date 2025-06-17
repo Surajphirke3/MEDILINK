@@ -15,11 +15,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 
+
 export function LoginForm() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("user");
+  const [accessToken, setAccessToken] = useState("");
 
   const handleLogin = async () => {
     console.log("email:", email);
@@ -35,10 +37,13 @@ export function LoginForm() {
         email,
         password,
         role,
+        accessToken,
       }),
     });
 
     const data = await response.json();
+    console.log(response);
+    
     console.log("login response:", data);
 
     if (response.status === 200) {
