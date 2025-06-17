@@ -23,7 +23,7 @@ function Navbar({ className }: { className?: string }) {
       <Menu setActive={setActive}>
        
         <div className="fixed top-4  inset-x-0 flex justify-center z-50">
-  <div className="flex items-center justify-between bg-[#E8F8D7] text-black px-6 py-2 rounded-full shadow-md w-[90%] max-w-8xl">
+  <div className="flex items-center justify-between bg-[#E8F8D7] text-black px-6 py-2 rounded-[30] shadow-md w-[96%] max-w-8xl">
     
     {/* Logo */}
     <div className="flex items-center space-x-2">

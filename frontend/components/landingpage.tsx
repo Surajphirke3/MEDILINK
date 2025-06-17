@@ -10,32 +10,43 @@ import {
   FolderOpen,
   HeartPulse
 } from "lucide-react"
+import { ContainerTextFlip } from "./ui/container-text-flip"
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen w-full ">
+    <main className="min-h-screen w-full  ">
       {/* Hero */}
-      <section className="bg-white dark:bg-black py-20 px-4 md:px-20">
+      <section className="bg-[#B3BDC0]  dark:bg-black py-30 px-4 md:px-20 rounded-[36]  m-2">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
           <div>
-            <h1 className="text-4xl md:text-5xl font-caprasimo   mb-6">
-              MediLink: Your Gateway to Smarter Healthcare Management
-            </h1>
-            <p className="text-lg text-muted-foreground mb-8">
-              Book appointments, manage patient profiles, and digitize medical records — all in one platform, built for doctors and patients.
-            </p>
-            <div className="flex gap-4">
-              <Link href="/login">
-                <Button size="lg">Get Started</Button>
+            <h1 className="text-4xl md:text-5xl    mb-6">
+                 MediLink: Your Gateway to  
+            <span className="inline-block">
+              your
+            <ContainerTextFlip className="inline-block"
+                  words={["smarter", "modern","digital","secure" ]} />
+                  </span> 
+                  <span className="inline-block">Healthcare</span> <br/>
+                  
+                  platform
+            </h1><h4 className="text-lg text-muted-foreground mb-8">
+              Discover healthier living for you and your family.
+            </h4>
+             
+            <div className="hero-button">
+              <Link href="/signup">
+                <Button className="bg-black rounded-full">Get Started</Button>
               </Link>
-              <Button className="border-gray-600" variant="outline" size="lg">Explore Features</Button>
             </div>
+            
           </div>
-          <div className="relative w-full h-[400px]">
+          <div className="relative ">
             <Image
               src="/medic.jpg"
               alt="Medical"
-              fill
+              width={800}
+              height={400}
+             
               className="object-cover rounded-xl shadow-lg"
               priority
             />
