@@ -83,8 +83,8 @@ function Navbar({ className }: { className?: string }) {
 
     {/* Right Icons */}
     <div className="flex items-center space-x-4">
-      <Link href="/login" className="text-sm px-4 py-2 rounded-full border-2 border-[#2E443C]">Login</Link>
-      <Link href="/signup" className="text-sm bg-[#2E443C] text-white px-4 py-2 rounded-full hover:bg-blue-600">Get Started</Link>
+      <Link href="/login" className="text-sm px-4 py-2 rounded-full border-1 border-[#2E443C] hover:bg-[#B2BCBE]">Login</Link>
+      <Link href="/signup" className="text-sm bg-[#B2BCBE] text-black px-4 py-2 rounded-full hover:bg-green-600">Get Started</Link>
     </div>
     </div>  
     

@@ -11,29 +11,30 @@ import {
   HeartPulse
 } from "lucide-react"
 import { ContainerTextFlip } from "./ui/container-text-flip"
+import { BouncyCardsFeatures } from "./bounce-card-features"
 
 export default function HomePage() {
   return (
     <main className="min-h-screen w-full  ">
       {/* Hero */}
-      <section className="bg-[#B3BDC0]  dark:bg-black py-30 px-4 md:px-20 rounded-[36]  m-2">
+      <section className="bg-[#B2BCBE]  dark:bg-black py-30 px-4 md:px-20 rounded-[36]  m-2">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
           <div>
             <h1 className="text-4xl md:text-5xl    mb-6">
                  MediLink: Your Gateway to  
-            <span className="inline-block">
+            
               your
-            <ContainerTextFlip className="inline-block"
+            <ContainerTextFlip 
                   words={["smarter", "modern","digital","secure" ]} />
-                  </span> 
-                  <span className="inline-block">Healthcare</span> <br/>
+               
+                 Healthcare
                   
                   platform
-            </h1><h4 className="text-lg text-muted-foreground mb-8">
-              Discover healthier living for you and your family.
-            </h4>
+            </h1>
+            
+          
              
-            <div className="hero-button">
+            <div className="">
               <Link href="/signup">
                 <Button className="bg-black rounded-full">Get Started</Button>
               </Link>
@@ -55,7 +56,15 @@ export default function HomePage() {
       </section>
 
       {/* Features */}
-      <section className="bg-gray-100 dark:bg-zinc-900 py-20 px-4 md:px-20">
+     
+      <section className="bg-[#122023]  dark:bg-black  px-4 md:px-20 rounded-[36]  m-2">
+        <div >
+           <BouncyCardsFeatures/>
+        </div>
+      </section>
+
+
+      <section className="bg-gray-100 dark:bg-zinc-900 py-20 px-4 md:px-20 ">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-3xl font-semibold mb-12">Why Choose MediLink?</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -68,7 +77,7 @@ export default function HomePage() {
       </section>
 
       {/* About */}
-      <section className="bg-white dark:bg-black py-20 px-4 md:px-20">
+      <section className="bg-gradient-to-b linear-gradient(135deg, #E8F8D7, #D7E9F8) dark:bg-black py-20 px-4 md:px-20">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-semibold mb-6">What is MediLink?</h2>
           <p className="text-lg text-muted-foreground">
