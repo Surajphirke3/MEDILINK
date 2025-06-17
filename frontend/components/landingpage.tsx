@@ -12,6 +12,8 @@ import {
 } from "lucide-react"
 import { ContainerTextFlip } from "./ui/container-text-flip"
 import { BouncyCardsFeatures } from "./bounce-card-features"
+import { TestimonialsSectionDemo } from "./testomonial"
+// import Testimonials from "./testmonial"
 
 export default function HomePage() {
   return (
@@ -64,7 +66,7 @@ export default function HomePage() {
       </section>
 
 
-      <section className="bg-gray-100 dark:bg-zinc-900 py-20 px-4 md:px-20 ">
+      {/* <section className="bg-gray-100 dark:bg-zinc-900 py-20 px-4 md:px-20 ">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-3xl font-semibold mb-12">Why Choose MediLink?</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -74,17 +76,24 @@ export default function HomePage() {
             <Feature icon={Stethoscope} title="Doctor Dashboard" description="Real-time overview of patients, schedules, and updates." />
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* About */}
-      <section className="bg-gradient-to-b linear-gradient(135deg, #E8F8D7, #D7E9F8) dark:bg-black py-20 px-4 md:px-20">
+      
+      {/* <section className="bg-gradient-to-l from-[#E8F8D7] to-[#D7E9F8] dark:bg-black py-20 px-4 md:px-20">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-semibold mb-6">What is MediLink?</h2>
           <p className="text-lg text-muted-foreground">
             MediLink is a full-stack medical appointment and health record platform designed for seamless communication between doctors and patients. With real-time data, secure access, and a clean interface, it transforms how healthcare is managed.
           </p>
         </div>
-      </section>
+      </section> */}
+    {/* Testimonials */}
+    <section className=" m-2 ">
+      <div className=" ">
+      <TestimonialsSectionDemo/>
+      </div>
+    </section>
 
       {/* Footer */}
       <footer className="bg-gray-50 dark:bg-zinc-950 py-10 text-center text-sm text-muted-foreground">
