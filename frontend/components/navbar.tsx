@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export function NavbarDemo() {
   return (
-    <div className="relative w-full flex items-center justify-center">
+    <div className="relative w-full flex items-center border-black justify-center transition-all duration-300 ease-in-out">
       <Navbar className="top-2" />
      
     </div>
@@ -16,23 +16,29 @@ export function NavbarDemo() {
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   return (
-    <div
-      className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
-    >
+   <div
+  className={cn(
+    "fixed top-10 inset-x-0 max-w-2xl mx-auto z-50 transition-all duration-700 ease-out animate-fade-in-up",
+    className
+  )}
+>
+
         
       <Menu setActive={setActive}>
        
-        <div className="fixed top-4  inset-x-0 flex justify-center z-50">
-  <div className="flex items-center justify-between bg-[#E8F8D7] text-black px-6 py-2 rounded-[30] shadow-md w-[96%] max-w-8xl">
+        <div className="fixed top-10  inset-x-0 flex justify-center z-50">
+          <div className="fixed top-0 inset-x-0 z-50 mx-auto flex items-center justify-between bg-white text-black px-6 py-2 h-14 md:my-2 md:rounded-full shadow-md md:shadow-sm backdrop-blur-lg w-[96%] max-w-[84rem]  border-black  md:bg-white/60 md:top-6 md:left-1/2 md:right-auto md:-translate-x-1/2">
+
+
     
     {/* Logo */}
     <div className="flex items-center space-x-2">
       
-      <span className="text-xl font-semibold ">Medilink</span>
+      <span className="text-3xl font-semibold text-[#94f27f] ">Medilink</span>
     </div>
 
     {/* Navigation Menu */}
-    <div className="flex items-center space-x-8 text-sm font-medium">
+    <div className="flex items-center space-x-8 text-16 font-medium">
       <Link href="/shop" className="hover:underline">Shop</Link>
       <MenuItem setActive={setActive} active={active} item="Services">
           <div className="flex flex-col space-y-4 text-sm">
@@ -83,8 +89,8 @@ function Navbar({ className }: { className?: string }) {
 
     {/* Right Icons */}
     <div className="flex items-center space-x-4">
-      <Link href="/login" className="text-sm px-4 py-2 rounded-full border-1 border-[#2E443C] hover:bg-[#B2BCBE]">Login</Link>
-      <Link href="/signup" className="text-sm bg-[#B2BCBE] text-black px-4 py-2 rounded-full hover:bg-green-600">Get Started</Link>
+      <Link href="/login" className="text-sm px-4 py-2 rounded-full border-1 border-[#94f27f] hover:bg-[#B2BCBE]">Login</Link>
+      <Link href="/signup" className="text-sm bg-[#94f27f] text-black px-4 py-2 rounded-full hover:bg-green-600">Get Started</Link>
     </div>
     </div>  
     

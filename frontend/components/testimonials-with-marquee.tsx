@@ -20,7 +20,7 @@ export function TestimonialsSection({
 }: TestimonialsSectionProps) {
   return (
     <section className={cn(
-      "bg-[#caf0a2]  rounded-[36]  m-2text-foreground",
+      "  rounded-[36]  m-2 text-foreground",
       "py-12 sm:py-24 md:py-32 px-0",
       className
     )}>

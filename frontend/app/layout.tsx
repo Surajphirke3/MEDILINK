@@ -15,16 +15,9 @@ const geistMono = Geist_Mono({
 
 
 const anaheim = Anaheim({
-  subsets: ['latin'],
-  weight: ['400'],
-  variable: '--font-anaheim',
-});
-
-const caprasimo =Caprasimo({
-  subsets: ['latin'],
-  weight: ['400'],
-  variable: '--font-caprasimo',
-
+  
+ 
+  variable: '--font-anaheim',subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
@@ -40,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${anaheim.variable} ${caprasimo.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${anaheim.variable} antialiased`}
        
       >
         

@@ -13,37 +13,52 @@ import {
 import { ContainerTextFlip } from "./ui/container-text-flip"
 import { BouncyCardsFeatures } from "./bounce-card-features"
 import { TestimonialsSectionDemo } from "./testomonial"
+import { Marque } from "./marquee"
 // import Testimonials from "./testmonial"
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen w-full  ">
+    <main >
+      
+
       {/* Hero */}
-      <section className="bg-[#B2BCBE]  dark:bg-black py-30 px-4 md:px-20 rounded-[36]  m-2">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
-          <div>
-            <h1 className="text-4xl md:text-5xl    mb-6">
-                 MediLink: Your Gateway to  
+   <section className="bg-[radial-gradient(at_53%_78%,rgba(255,255,0,0.3)_0px,transparent_50%),radial-gradient(at_71%_91%,rgba(51,255,0,0.3)_0px,transparent_50%),radial-gradient(at_31%_91%,rgba(255,128,0,0.17)_0px,transparent_50%)] dark:bg-black py-[120px] px-4 md:px-20 rounded-t-[28px]">
+ <div className="max-w-8xl mx-auto  items-center gap-10">
+ 
+          <div className="text-center ">
+
+             <div className="mb-4 inline-block rounded-full bg-white border border-gray-200 px-4 py-1 text-sm font-medium text-gray-700 shadow-sm">
+      🎉 Trusted by 500+ healthcare professionals
+    </div>
+       
+            <h1 className="text-[72px] md:text-[72px] font-bold    mb-6">
+                Medilink your all in one 
+                 <br/>
             
-              your
+            
             <ContainerTextFlip 
                   words={["smarter", "modern","digital","secure" ]} />
-               
+            
                  Healthcare
                   
                   platform
             </h1>
+            <p className="mt-6 font-semibold text-lg text-gray-600 dark:text-gray-300">
+      MediLink keeps your clinical notes, schedules, and updates in one place — <br className="hidden md:block" />
+      clean, connected, and accessible anytime.
+    </p>
             
           
              
-            <div className="">
+            <div className="mt-8 flex justify-center space-x-4">
               <Link href="/signup">
-                <Button className="bg-black rounded-full">Get Started</Button>
+                <Button className="bg-[#94f27f] rounded-full text-black hover:bg-black hover:text-white">Get Started</Button>
               </Link>
             </div>
             
+            
           </div>
-          <div className="relative ">
+          {/* <div className="relative ">
             <Image
               src="/medic.jpg"
               alt="Medical"
@@ -53,13 +68,18 @@ export default function HomePage() {
               className="object-cover rounded-xl shadow-lg"
               priority
             />
-          </div>
+          </div> */}
         </div>
       </section>
 
+      {/* Marque */}
+    <section className=" text-2xl font-bold text-center text-gray-800 dark:text-white my-10">
+      Build With
+      <Marque/>
+    </section>
       {/* Features */}
      
-      <section className="bg-[#122023]  dark:bg-black  px-4 md:px-20 rounded-[36]  m-2">
+      <section className="  m-2">
         <div >
            <BouncyCardsFeatures/>
         </div>
@@ -94,6 +114,8 @@ export default function HomePage() {
       <TestimonialsSectionDemo/>
       </div>
     </section>
+
+   
 
       {/* Footer */}
       <footer className="bg-gray-50 dark:bg-zinc-950 py-10 text-center text-sm text-muted-foreground">

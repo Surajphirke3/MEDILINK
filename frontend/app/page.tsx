@@ -13,7 +13,7 @@ import { NavbarDemo } from '@/components/navbar'
 
 const page = () => {
   return (
-    <div className="min-h-screen w-full bg-[#B2BCBE] dark:bg-black text-black dark:text-white">
+    <div className="min-h-screen w-full bg-gray-100">
       {/* <Header1/> */}
     <NavbarDemo/>
      {/* <div className="relative w-full "> */}

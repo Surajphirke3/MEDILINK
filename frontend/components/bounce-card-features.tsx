@@ -7,7 +7,7 @@ export const BouncyCardsFeatures = () => {
   return (
     <section className="mx-auto max-w-7xl px-4 py-12 ">
       <div className="mb-8 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end md:px-8">
-        <h2 className="max-w-lg text-4xl text-white font-bold md:text-5xl">
+        <h2 className="max-w-lg text-4xl font-bold md:text-5xl">
           Why Medilink ?
           <br/>
           <span className="text-slate-500"> what do we provide </span>

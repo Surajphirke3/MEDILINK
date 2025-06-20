@@ -20,6 +20,7 @@
     "@radix-ui/react-navigation-menu": "^1.2.13",
     "@radix-ui/react-select": "^2.2.5",
     "@radix-ui/react-slot": "^1.2.3",
+    "@rive-app/react-canvas": "^4.21.3",
     "@tabler/icons-react": "^3.34.0",
     "button": "^1.1.1",
     "class-variance-authority": "^0.7.1",
