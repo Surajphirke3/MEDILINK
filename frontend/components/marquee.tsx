@@ -101,7 +101,7 @@ export function Marque() {
         {repeated.map((Logo, index) => (
           <div
             key={index}
-            className="h-full w-fit mx-[2rem] flex items-center justify-start mt-1"
+            className="h-full w-fit mx-[2rem] flex items-center justify-start mt-5"
           >
             
             <Logo />

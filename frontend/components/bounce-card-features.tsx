@@ -38,9 +38,9 @@ export const BouncyCardsFeatures = () => {
             
         <BounceCard className="col-span-12 md:col-span-8">
 
-          <div className="flex items-center gap-2">
-            <HeartPulse className="h-10 w-10 text-indigo-600" />
-            <CardTitle>Patients Dashboard</CardTitle>
+          <div className="flex items-center  col-auto 2">
+            <HeartPulse className="h-10 w-10 align-right text-indigo-600" />
+            <CardTitle>  Patients Dashboard</CardTitle>
           </div>
           <div className="absolute bottom-0 left-4 right-4 top-32  border-1 border-black translate-y-8 rounded-t-2xl bg-[#D7E9F8] p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
              <a className="block text-center font-sans text-5xl text-black " href="services/patients-dashboard">

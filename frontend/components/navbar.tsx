@@ -27,7 +27,7 @@ function Navbar({ className }: { className?: string }) {
       <Menu setActive={setActive}>
        
         <div className="fixed top-10  inset-x-0 flex justify-center z-50">
-          <div className="fixed top-0 inset-x-0 z-50 mx-auto flex items-center justify-between bg-white text-black px-6 py-2 h-14 md:my-2 md:rounded-full shadow-md md:shadow-sm backdrop-blur-lg w-[96%] max-w-[84rem]  border-black  md:bg-white/60 md:top-6 md:left-1/2 md:right-auto md:-translate-x-1/2">
+          <div className="fixed top-0 inset-x-0 z-50 mx-auto flex items-center justify-between bg-white text-black px-6 py-2 h-14 md:my-2 md:rounded-full shadow-md md:shadow-sm backdrop-blur-lg w-[96%] max-w-[84rem]  border-black   md:bg-white/60 md:top-6 md:left-1/2 md:right-auto md:-translate-x-1/2">
 
 
     

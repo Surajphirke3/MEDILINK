@@ -1,34 +1,104 @@
-// lib/api.ts
-const BASE_URL = "http://localhost:5000"; // Update to your backend URL
+import { NextResponse } from 'next/server';
 
-export async function fetchWithToken(
-  endpoint: string,
-  method: "GET" | "POST",
-  token: string,
-  body?: Record<string, unknown>
-) {
-  const res = await fetch(`${BASE_URL}${endpoint}`, {
-    method,
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-    body: body ? JSON.stringify(body) : undefined,
-  });
+export async function GET(request: Request) {
+  try {
+    const authHeader = request.headers.get('authorization');
 
-  const data = await res.json();
-  if (!res.ok) {
-    throw new Error(data?.error || "Something went wrong");
+    if (!authHeader) {
+      return NextResponse.json(
+        {
+          message: "authentication failed",
+          error: "invalid access",
+          data: null
+        },
+        { status: 403 }
+      );
+    }
+
+    const res = await fetch('http://localhost:5000/v1/auth/email-verify/request', {
+      method: 'GET',
+      headers: {
+        'Authorization': authHeader,
+        'Content-Type': 'application/json'
+      }
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      return NextResponse.json(
+        {
+          message: data.message || 'Request failed',
+          error: data.error || data,
+          data: null
+        },
+        { status: res.status }
+      );
+    }
+
+    return NextResponse.json(data);
+  } catch (error: any) {
+    console.error('Email verification request error:', error);
+
+    return NextResponse.json(
+      {
+        message: 'Something went wrong',
+        error: error.message || 'Unknown error',
+        data: null
+      },
+      { status: 500 }
+    );
   }
-  return data;
 }
+export async function POST(request: Request) {
+  try {
+    const authHeader = request.headers.get('authorization');
+    const body = await request.json();
 
-export async function requestEmailVerification(token: string) {
-  return await fetchWithToken("/v1/auth/email-verify/request", "GET", token);
-}
+    if (!authHeader) {
+      return NextResponse.json(
+        {
+          message: "authentication failed",
+          error: "invalid access",
+          data: null
+        },
+        { status: 403 }
+      );
+    }
 
-export async function submitEmailOTP(token: string, otp: string) {
-  return await fetchWithToken("/v1/auth/email-verify/submit", "POST", token, {
-    otp,
-  });
+    const res = await fetch('http://localhost:5000/v1/auth/email-verify/submit', {
+      method: 'POST',
+      headers: {
+        'Authorization': authHeader,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      return NextResponse.json(
+        {
+          message: data.message || 'Request failed',
+          error: data.error || data,
+          data: null
+        },
+        { status: res.status }
+      );
+    }
+
+    return NextResponse.json(data);
+  } catch (error: any) {
+    console.error('Email verification submit error:', error);
+
+    return NextResponse.json(
+      {
+        message: 'Something went wrong',
+        error: error.message || 'Unknown error',
+        data: null
+      },
+      { status: 500 }
+    );
+  }
 }

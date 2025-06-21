@@ -1,6 +1,8 @@
 "use client"
-
+import React from "react"
 import Link from "next/link"
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 // import { Stethoscope, CalendarClock, UserHeart, FolderOpen } from "lucide-react"
@@ -55,7 +57,24 @@ export default function HomePage() {
                 <Button className="bg-[#94f27f] rounded-full text-black hover:bg-black hover:text-white">Get Started</Button>
               </Link>
             </div>
-            
+           <div className="relative flex items-center mt-12 justify-between w-full max-w-screen-xl mx-auto px-6 py-12 h-[500px]">
+  {/* Animation */}
+  <div className="w-[400px] sm:w-[500px] md:w-[600px] lg:w-[700px] xl:w-[800px] h-[500px]">
+    <DotLottieReact
+      src="https://lottie.host/68b0fde8-8924-4e55-ad65-aa5660ce6e91/z5Rg7ScGWQ.lottie"
+      loop
+      autoplay
+    />
+  </div>
+
+  {/* Text */}
+  <div className="text-right text-gray-800 dark:text-gray-200">
+    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
+      Virtual Healthcare <br />
+      <span className="text-green-600">platform</span>
+    </h1>
+  </div>
+</div>
             
           </div>
           {/* <div className="relative ">
