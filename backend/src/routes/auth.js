@@ -7,27 +7,40 @@ const { verifyAccessToken } = require("../middlewares/authentication")
 const { sendMail } = require("../helper")
 
 
+
 Router.post("/signup", (req, res) => {
-    const newUser = req.body
+    const newUser = req.body;
 
     return User.create(newUser)
-    .then(doc => {
+        .then(doc => {
+            const payload = {
+                email: doc.email,
+                role: doc.role
+            };
 
-        delete doc._doc.password
-        return res.status(201).json({
-            message: "signup successful",
-            error: null,
-            data: doc
-         })
-    })
-    .catch(error => {
-        return res.status(422).json({
-            message: "signup failed",
-            error: error,
-            data: null
-         })
-    })
-})
+            const token = jwt.sign(payload, process.env.SECRET, {
+                expiresIn: '1h'
+            });
+
+            delete doc._doc.password;
+
+            return res.status(201).json({
+                message: "signup successful",
+                error: null,
+                data: {
+                    ...doc._doc,
+                    accessToken: token
+                }
+            });
+        })
+        .catch(error => {
+            return res.status(422).json({
+                message: "signup failed",
+                error: error,
+                data: null
+            });
+        });
+});
 
 Router.post("/login", (req, res) => {
     const { email, password, role } = req.body

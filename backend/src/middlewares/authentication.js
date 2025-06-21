@@ -2,27 +2,20 @@ const jwt = require("jsonwebtoken")
 
 function verifyAccessToken(req, res, next) {
     try {
-         const token = req.headers.authorization.split(" ")[1];
-          console.log('token', req.headers.authorization)
-        if(token == null) {
+        if(req.headers.authorization == null) {
             throw "invalid access"
         }
-       
-        const verifiedData = jwt.verify(token, process.env.SECRET)
+        const verifiedData = jwt.verify(req.headers.authorization, process.env.SECRET)
         console.log("verify : ", verifiedData)
 
         req.userEmail = verifiedData.email 
         req.userRole = verifiedData.role
     } catch (error) {
-        console.log("error: ", error)
         return res.status(403).json({
             message: "authentication failed",
             error: "invalid access",
-            data: null,
-            
-            
+            data: null
          })
-         
     }
     next()
 }
