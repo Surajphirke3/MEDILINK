@@ -38,6 +38,8 @@ Router.post("/signup", (req, res) => {
                 message: "signup failed",
                 error: error,
                 data: null
+
+                
             });
         });
 });
