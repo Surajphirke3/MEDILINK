@@ -20,8 +20,8 @@ export function LoginForm() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("user");
-  const [accessToken, setAccessToken] = useState("");
+  const [role, setRole] = useState("patient"); // Default role set to patient
+
 
   const handleLogin = async () => {
     console.log("email:", email);
@@ -37,7 +37,7 @@ export function LoginForm() {
         email,
         password,
         role,
-        accessToken,
+       
       }),
     });
 
@@ -67,9 +67,10 @@ export function LoginForm() {
       </CardHeader>
       <CardContent>
         <div className="flex flex-col gap-6">
-          <div className="grid gap-2">
+          <div className="grid gap-2 ">
             <Label htmlFor="email">Email</Label>
             <Input
+              className="border-1 border-black"
               id="email"
               type="email"
               placeholder="you@example.com"
@@ -80,15 +81,18 @@ export function LoginForm() {
           <div className="grid gap-2">
             <Label htmlFor="password">Password</Label>
             <Input
+             className="border-1 border-black"
               id="password"
               type="password"
               onChange={(e) => setPassword(e.target.value)}
               value={password}
             />
           </div>
+          
           <div className="grid gap-2">
             <Label htmlFor="role">Role</Label>
-            <input
+            <Input
+              className="border-1 border-black"
               id="role"
             type="role"
             onChange={(e) => setRole(e.target.value)}
