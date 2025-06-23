@@ -1,14 +1,20 @@
-// app/patient/layout.tsx
 "use client";
 
-import { SidebarDemo } from "@/components/sidebar"; // Adjust path as needed
+import { SidebarDemo } from "@/components/sidebar"; // adjust path
 import React from "react";
 
 export default function PatientLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex w-[calc(100%-16px)] h-[710px] border-6 border-black rounded-2xl m-2">
-      <SidebarDemo /> {/* Sidebar stays fixed */}
-      <main className="">{children}</main> {/* Dynamic right content */}
+    <div className="flex h-screen overflow-hidden m-2 border-6 rounded-[20px] border-black">
+      {/* Sidebar - fixed width */}
+      <div className=" m-1  ">
+        <SidebarDemo />
+      </div>
+
+      {/* Main Content - scrollable */}
+      <main className="flex-1 overflow-y-scroll scrollbar-hide  m-1 border-4 border-black rounded-xl bg-white dark:bg-neutral-900 p-6 ">
+        {children}
+      </main>
     </div>
   );
 }

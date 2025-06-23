@@ -9,6 +9,7 @@ import {
   IconCalendarEvent,
 } from "@tabler/icons-react";
 import { motion } from "motion/react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 // export function SidebarDemo() {
@@ -96,28 +97,34 @@ import { cn } from "@/lib/utils";
 // }
 export const Logo = () => {
   return (
-    <a
-      href="#"
+   <Link
+      href="/"
       className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-black"
     >
+       <div className="h-5 w-6 shrink-0 rounded-tl-lg rounded-tr-sm rounded-br-lg rounded-bl-sm bg-black dark:bg-white" />
+    
       <motion.span
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="text-2xl font-bold text-[#94f27f] dark:text-white"
+        className="text-4xl font-bold text-[#94f27f] dark:text-white"
       >
         Medilink
       </motion.span>
-    </a>
+    </Link>
   );
 };
+  
 export const LogoIcon = () => {
   return (
-    <a
-      href="#"
+   <Link
+      href="/"
       className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-black"
     >
-      <div className="h-5 w-6 shrink-0 rounded-tl-lg rounded-tr-sm rounded-br-lg rounded-bl-sm bg-black dark:bg-white" />
-    </a>
+      {/* "M" Icon Box */}
+      <div className="flex items-center justify-center h-7 w-7 rounded-md bg-black text-green-500 dark:bg-white dark:text-black font-bold text-xs">
+        M
+      </div>
+    </Link>
   );
 };
 
@@ -147,11 +154,11 @@ export function SidebarDemo() {
     },
     {
       label: "Reports",
-      href: "/patient/preports",
+      href: "/patient/reports",
       icon: <IconReportAnalytics className="h-5 w-5 text-neutral-700 dark:text-neutral-200" />,
     },
     {
-      label: "Profile",
+      label: "profile",
       href: "/patient/profile",
       icon: <IconSettings className="h-5 w-5 text-neutral-700 dark:text-neutral-200" />,
     },
@@ -162,14 +169,18 @@ export function SidebarDemo() {
     },
   ];
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   return (
-    <div className="w-64 h-[700px] border-r-4 border-green-900 bg-black dark:bg-neutral-800 rounded-2xl">
-      <Sidebar open={open} setOpen={setOpen} animate={false}>
+    <div className={cn(
+        "mx-auto flex w-full max-w-7xl flex-1 flex-col overflow-hidden rounded-md border border-neutral-200 bg-gray-100 md:flex-row dark:border-neutral-700 dark:bg-neutral-800",
+        "h-screen"
+      )}>
+         <Sidebar open={open} setOpen={setOpen} animate={true}>
         <SidebarBody className="justify-center gap-10 border-1 border-black rounded-[10px]">
-          <div className="flex flex-1 flex-col overflow-x-hidden overflow-y-auto">
-            <Logo />
+          <div className="flex flex-1 flex-col overflow-x-hidden overflow-y-auto ">
+            {open?<Logo /> : <LogoIcon/>}
+            <hr className="my-3 border-t-2 border-black" />
             <div className="mt-8 flex flex-col gap-2">
               {links.map((link, idx) => (
                 <SidebarLink key={idx} link={link} />
