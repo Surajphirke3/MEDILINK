@@ -84,7 +84,7 @@ export default function VerifyEmailPage() {
         setMessage('Email verified successfully!');
         setMessageType('success');
         const userRole = data.data.role;
-        setTimeout(() => router.push(`/${userRole}/dasboard`), 1000);
+        setTimeout(() => router.push(`/${userRole}/dashboard`), 1000);
       } else {
         setOtpError(true);
         throw new Error(data.message || data.error || 'Invalid OTP');

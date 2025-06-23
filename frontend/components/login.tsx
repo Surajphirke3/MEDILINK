@@ -48,7 +48,7 @@ export function LoginForm() {
 
     if (response.status === 200) {
       alert("Login successful: " + data.data.name);
-      router.push(role === "doctor" ? "/doctor/dasboard" : "/patient/dasboard");
+      router.push(role === "doctor" ? "/doctor/dashboard" : "/patient/dashboard");
     }
   };
 
