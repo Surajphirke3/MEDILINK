@@ -26,7 +26,7 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.get('/greeting', (req, res) => {
+app.get('/', (req, res) => {
   res.json({ message: 'Welcome to MediLink API!' });
 });
 
