@@ -16,6 +16,7 @@ import { ContainerTextFlip } from "./ui/container-text-flip"
 import { BouncyCardsFeatures } from "./bounce-card-features"
 import { TestimonialsSectionDemo } from "./testomonial"
 import { Marque } from "./marquee"
+
 // import Testimonials from "./testmonial"
 
 export default function HomePage() {
@@ -25,7 +26,7 @@ export default function HomePage() {
 
       {/* Hero */}
    <section className="bg-[radial-gradient(at_53%_78%,rgba(255,255,0,0.3)_0px,transparent_50%),radial-gradient(at_71%_91%,rgba(51,255,0,0.3)_0px,transparent_50%),radial-gradient(at_31%_91%,rgba(255,128,0,0.17)_0px,transparent_50%)] dark:bg-black py-[120px] px-4 md:px-20 rounded-t-[28px]">
- <div className="max-w-8xl mx-auto  items-center gap-10">
+ <div className="max-w-8xl mx-auto  items-center gap-10 ">
  
           <div className="text-center ">
 
@@ -33,14 +34,14 @@ export default function HomePage() {
       🎉 Trusted by 500+ healthcare professionals
     </div>
        
-            <h1 className="text-[72px] md:text-[72px] font-bold    mb-6">
-                Medilink your all in one 
-                 <br/>
-            
-            
-            <ContainerTextFlip 
-                  words={["smarter", "modern","digital","secure" ]} />
-            
+            <h1 className="text-[72px] md:text-[72px] font-bold  mb-6">
+                Medilink your all in one
+                 <br />
+
+
+            <ContainerTextFlip
+                  words={["smarter", "modern", "digital", "secure"]} />
+
                  Healthcare
                   
                   platform

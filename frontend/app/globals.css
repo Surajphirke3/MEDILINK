@@ -48,6 +48,7 @@
   --color-brand: var(----brand);
   --color-sky-500: var(----sky-500);
   --color-sky-400: var(----sky-400);
+  --color-sidebar-ring: var(--sidebar-ring);
 
   @keyframes marquee {
     from {

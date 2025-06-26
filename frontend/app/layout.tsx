@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono,Anaheim } from "next/font/google";
+import { Geist, Geist_Mono,Anaheim,Playfair_Display, Poppins } from "next/font/google";
 import "./globals.css";
 // import { NavbarDemo } from "@/components/navbar";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+});
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 const geistMono = Geist_Mono({
@@ -15,9 +21,13 @@ const geistMono = Geist_Mono({
 
 
 const anaheim = Anaheim({
-  
- 
-  variable: '--font-anaheim',subsets: ['latin'],
+  variable: '--font-anaheim',
+  subsets: ['latin'],
+});
+
+const playfair = Playfair_Display({
+  variable: '--font-playfair',
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
@@ -27,19 +37,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${anaheim.variable} antialiased `
-      }
-       
-      >
-        
-        {children}
-      </body>
+    <html lang="en" className={poppins.className}>
+      <body>{children}</body>
     </html>
-  );
+  )
 }

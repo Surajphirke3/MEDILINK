@@ -1,20 +1,21 @@
 "use client";
 
-import { SidebarDemo } from "@/components/sidebar"; // adjust path
 import React from "react";
+import { AppSidebar } from "@/components/app-sidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
 
 export default function PatientLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex h-screen overflow-hidden m-2 border-6 rounded-[20px] border-black">
-      {/* Sidebar - fixed width */}
-      <div className=" m-1  ">
-        <SidebarDemo />
-      </div>
+    <SidebarProvider>
+      <div className="flex h-screen overflow-hidden">
+        {/* Sidebar */}
+        <AppSidebar />
 
-      {/* Main Content - scrollable */}
-      <main className="flex-1 overflow-y-scroll scrollbar-hide  m-1 border-4 border-black rounded-xl bg-white dark:bg-neutral-900 p-6 ">
-        {children}
-      </main>
-    </div>
+        {/* Main Content */}
+        <main className="flex-1 overflow-y-auto p-6 bg-white dark:bg-neutral-900 rounded-xl scrollbar-hide">
+          {children}
+        </main>
+      </div>
+    </SidebarProvider>
   );
 }
