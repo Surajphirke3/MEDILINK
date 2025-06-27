@@ -28,6 +28,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar"
+import Link from "next/link"
 
 export function NavUser({
   user,
@@ -86,7 +87,9 @@ export function NavUser({
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <IconUserCircle />
+              <Link href="profile" className="flex items-center gap-2">
                 Account
+              </Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <IconCreditCard />
