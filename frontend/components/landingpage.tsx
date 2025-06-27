@@ -2,7 +2,14 @@
 import React from "react"
 import Link from "next/link"
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 // import { Stethoscope, CalendarClock, UserHeart, FolderOpen } from "lucide-react"
@@ -49,6 +56,18 @@ export default function HomePage() {
             <p className="mt-6 font-semibold text-lg text-gray-600 dark:text-gray-300">
       MediLink keeps your clinical notes, schedules, and updates in one place — <br className="hidden md:block" />
       clean, connected, and accessible anytime.
+       <Dialog>
+                    <DialogTrigger>Open</DialogTrigger>
+                    <DialogContent>
+                      <DialogHeader>
+                        <DialogTitle>Are you absolutely sure?</DialogTitle>
+                        <DialogDescription>
+                          This action cannot be undone. This will permanently delete your account
+                          and remove your data from our servers.
+                        </DialogDescription>
+                      </DialogHeader>
+                    </DialogContent>
+                  </Dialog>
     </p>
             
           

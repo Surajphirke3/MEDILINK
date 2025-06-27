@@ -2,7 +2,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div>im on logout</div>
+    <div>im on profile</div>
   )
 }
 

@@ -14,17 +14,17 @@ import {
   SquareTerminal,
 } from "lucide-react"
 
-import { NavMain } from "@/components/nav-main"
-import { NavProjects } from "@/components/nav-projects"
-import { NavUser } from "@/components/nav-user"
-import { TeamSwitcher } from "@/components/team-switcher"
+import { NavMain } from '@/components/nav-main'
+import { NavProjects } from '@/components/nav-projects'
+import { NavUser } from '@/components/nav-user'
+import { TeamSwitcher } from '@/components/team-switcher'
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
   SidebarRail,
-} from "@/components/ui/sidebar"
+} from '@/components/ui/sidebar'
 
 // This is sample data.
 const data = {
@@ -101,7 +101,7 @@ const data = {
         },
         {
           title: "Get Started",
-          url: "/patient/dashboard/profile",
+          url: "#",
         },
         {
           title: "Tutorials",
@@ -140,12 +140,12 @@ const data = {
   projects: [
     {
       name: "Design Engineering",
-      url: "#",
+      url: "profile",
       icon: Frame,
     },
     {
       name: "Sales & Marketing",
-      url: "#",
+      url: "appointment",
       icon: PieChart,
     },
     {

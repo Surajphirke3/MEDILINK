@@ -1,5 +1,12 @@
 "use client"
-
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 import {
   BadgeCheck,
   Bell,
@@ -70,10 +77,7 @@ export function NavUser({
           >
             <DropdownMenuLabel className="p-0 font-normal">
               <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
-                <Avatar className="h-8 w-8 rounded-lg">
-                  <AvatarImage src={user.avatar} alt={user.name} />
-                  <AvatarFallback className="rounded-lg">CN</AvatarFallback>
-                </Avatar>
+               
                 <div className="grid flex-1 text-left text-sm leading-tight">
                   <span className="truncate font-medium">{user.name}</span>
                   <span className="truncate text-xs">{user.email}</span>
@@ -99,7 +103,19 @@ export function NavUser({
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <Bell />
-                Notifications
+                
+                 <Dialog>
+                    <DialogTrigger>Open</DialogTrigger>
+                    <DialogContent>
+                      <DialogHeader>
+                        <DialogTitle>Are you absolutely sure?</DialogTitle>
+                        <DialogDescription>
+                          This action cannot be undone. This will permanently delete your account
+                          and remove your data from our servers.
+                        </DialogDescription>
+                      </DialogHeader>
+                    </DialogContent>
+                  </Dialog>
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
